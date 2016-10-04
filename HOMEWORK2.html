@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>myLittleLottery</title>
+  <meta charset="utf-8">
+</head>
+<script type="text/javascript">
+    var max = 1000
+    var min = 100
+    var x;
+    var y = Math.round(Math.random()*(max-min))+min;
+console.log(y)
+    function onload() {
+      x = document.getElementById('x');
+    }
+    function check(){
+      if (x.value < y)
+      {
+          alert( 'Ваше число менше ніж загадане' );
+      }
+      else if (x.value > y)
+      {
+          alert( 'Ваше число більше ніж загадане');
+      }
+      else
+      {
+          alert( 'Ви виграли!!!!' );
+      }
+    }
+</script>
+
+<body onload="onload();">
+    <input type="text" name="enter" class="enter" value="" id="x"/>
+    <input type="image" src = "http://htmlbook.ru/files/images/html/imgbutton.gif"   alt ="KNOPKA" onclick="check();"/>
+</body>
+</html>

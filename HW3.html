@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  ​  <meta charset="utf-8">
+  <title>Масиви</title>
+</head>
+<body>
+
+  <script>
+var maxCounter = 7890
+  var max = 10
+  var min = 1
+  function randomy() {
+    a = Math.round(Math.random()*(max-min))+min
+    do {
+      b = Math.round(Math.random()*(max-min))+min
+    } while (b == a)
+
+    do {
+      c = Math.round(Math.random()*(max-min))+min
+    }  while (c == a || c == b)
+
+    return [a, b , c]
+
+  }
+
+  function check(a, b) {
+    for (i = 0; i <= 2 ; i++) {
+      if (a[i] != b[i] ) {
+        return false  }}
+        return true
+      }
+      function main(){
+        x = document.getElementById('x');
+        x = x.value.split(" ")
+        for (i = 0; i <= 2; i ++)
+        {
+          x[i] = parseInt(x[i])
+        }
+        console.log(x)
+        counter = 1
+        while(counter<= maxCounter){
+          var y = randomy()
+          if (check(x, y) == true){
+            console.log('Масиви рівні, к-сть спроб', counter, 'масив x', x, 'масив y', y)
+            break
+          }
+          else{
+            counter++
+          }
+        }
+        if (counter >= maxCounter){
+console.log("Не вдалося знайти масив з 3-ох не повторювальних чисел за", maxCounter, " спроб")
+        }
+      }
+      </script>
+      <h1>Введіть масив з трьох елементів</h1>
+      <onload="onload();">
+      <input type="text" name="enter" class="enter" value="" id="x"/>
+      <input type="image" src = "http://htmlbook.ru/files/images/html/imgbutton.gif"   alt ="KNOPKA" onclick="main();"/>
+
+    </body>
+    </html>
